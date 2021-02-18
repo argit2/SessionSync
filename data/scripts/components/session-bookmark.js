@@ -31,7 +31,6 @@ define(function(require, exports) {
 	function SessionBookmark(bookmark)
 	{
 		var DomElem = HTMLCreator();
-
 		var box = DomElem('div', {class : 'bookmark'});
 		box.setAttribute('pinned', bookmark.pinned);
 

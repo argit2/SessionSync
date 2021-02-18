@@ -18,6 +18,7 @@ define(function(require, exports) {
 	{
 		var DomElem = HTMLCreator();
 		var folder = DomElem('div', {class: 'folder', type: bookmark.type});
+		folder.setAttribute('type', 'folder');
 		folder.setAttribute('sessionID', bookmark.id);
 
 		this.DOMRoot = folder;

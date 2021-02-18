@@ -6,16 +6,26 @@
  * Action Button
  */
 
+
+
+/* chrome */
 html {
 	 min-width: 800px;
 	 min-height: 600px;
  }
+
+/* chrome */
+ * {
+ user-select: none;
+}
 
  #session-sync .comp-button {
 	width: 100%;
 	color: #333;
 	display: flex;
 }
+
+
 
 #session-sync .comp-button .label {
 	flex: 1;

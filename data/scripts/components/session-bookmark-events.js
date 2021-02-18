@@ -39,8 +39,26 @@ define(function(require, exports) {
 			}
 		}
 
+		// receives mouse event
+		function elementsAtMouse(e) {
+			let elements = document.elementsFromPoint(e.clientX,e.clientY);
+			return elements;
+		}
+
+		function elemAtMouseWhoseTypeIs(e, type) {
+			let elems = elementsAtMouse(e);
+			for (let ele of elems) {
+				if (ele.type === type) {
+					return ele;
+				}
+			}
+			return null;
+		}
+
 		function getTargetType(e) {
 			return getAttribute(e.target, 'type');
+			//return getAttribute(e.target, 'type') ||
+			//	e.target.className // chrome;
 		}
 
 		function getSessionID(e) {
@@ -197,12 +215,19 @@ define(function(require, exports) {
 
 		var mouseUp = function _mouseUp(e)
 		{
+			// chrome fix to allow drag and drop of bookmarks to folders
+			let folderElem = elemAtMouseWhoseTypeIs(e, 'folder');
+			if (folderElem && folderElem != e.target) {
+				let newEvent = new MouseEvent(e.type, e);
+				folderElem.dispatchEvent(newEvent);
+				return;
+			}
+
 			switch(SyncModel.state.session)
 			{
 				// if restore session preview
 				case 'restore': {
 					var bookmarkID = getBookmarkID(e);
-
 					// Test if changing
 					if (bookmarkID != null)
 					{
