@@ -2,7 +2,7 @@ Chrome fork of SessionSync
 
 Basic features tested on Vivaldi browser as of February of 2021th.
 
-The extension might not work. It's advised to use this extension alongside another backup utility.
+The extension might not work. It's advised to use this extension alongside another session backup extension.
 
 # Instructions
 
