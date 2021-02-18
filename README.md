@@ -1,5 +1,20 @@
 Chrome fork of SessionSync
 
+Basic features tested on Vivaldi browser as of February of 2021th.
+
+The extension might not work. It's advised to use this extension alongside another backup utility.
+
+# Instructions
+
+1) Download the extension files and extract them to a folder
+2) Go to Manage Extensions page
+3) Toggle developer mode on
+4) Click "Load unpacked"
+5) Select the folder the files are in
+6) Done.
+
+
+
 
 
 SessionSync [![Session Sync](/data/images/icon32.png)](https://addons.mozilla.org/en-US/firefox/addon/session-sync/)
