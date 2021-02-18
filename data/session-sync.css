@@ -6,6 +6,11 @@
  * Action Button
  */
 
+html {
+	 min-width: 800px;
+	 min-height: 600px;
+ }
+
  #session-sync .comp-button {
 	width: 100%;
 	color: #333;

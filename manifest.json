@@ -21,6 +21,7 @@
 	},
 	"background": {
 		"scripts": [
+			"browser-polyfill.js",
 			"scripts/main.js",
 			"scripts/favicon-service.js",
 			"scripts/session-management.js",
