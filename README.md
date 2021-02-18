@@ -1,3 +1,7 @@
+Chrome fork of SessionSync
+
+
+
 SessionSync [![Session Sync](/data/images/icon32.png)](https://addons.mozilla.org/en-US/firefox/addon/session-sync/)
 ===========
 
