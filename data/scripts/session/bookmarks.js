@@ -44,7 +44,19 @@ define(function(require, exports) {
 		var getFolderBookmarks = function getFolderBookmarks(folderID, callback)
 		{
 			var result = browser.bookmarks.getChildren(folderID);
-			result.then(callback, function fail() {
+			// chrome fix
+			// apparently, chrome doesn't return the 'type' property telling if the bookmark is a folder or not
+			// so i add the property
+			function fixAndCallback(arr) {
+				arr.forEach(x => {
+					if (x.url !== 'undefined' ) {
+						x.type = 'folder';
+					}
+				})
+				callback(arr);
+			}
+			
+			result.then(fixAndCallback, function fail() {
 				console.log('Error getting bookmarks from folder ID: ', folderID);
 			});
 		};
